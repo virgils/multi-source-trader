@@ -12,6 +12,11 @@ Claude Code itself, following the rules in [`CLAUDE.md`](./CLAUDE.md), is the on
 net. A scheduled, guardrailed app may get built later, once the decision quality from
 manual sessions holds up.
 
+Right now the goal is narrower than "trade for real": this is about testing the
+Robinhood MCP connection itself, using real data from Octagon and Alpha Vantage, and
+seeing how Claude reasons over that data — not yet about relying on it for live trading
+decisions.
+
 ## Setup
 
 1. Copy `.env.example` to `.env` and fill in real values (see [`TODO.md`](./TODO.md) for
