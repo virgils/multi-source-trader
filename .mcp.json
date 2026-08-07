@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "octagon": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "octagon-mcp@latest"],
+      "env": {
+        "OCTAGON_API_KEY": "${OCTAGON_API_KEY}"
+      }
+    },
+    "alphavantage": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["marketdata-mcp-server", "${ALPHAVANTAGE_API_KEY}"]
+    },
+    "robinhood": {
+      "type": "http",
+      "url": "${ROBINHOOD_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${ROBINHOOD_API_KEY}"
+      }
+    }
+  }
+}
