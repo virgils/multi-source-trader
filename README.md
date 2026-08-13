@@ -5,7 +5,7 @@ and trading sessions:
 
 - **Robinhood Agentic Trading** — execution (trade preview/execute, portfolio, technicals)
 - **Octagon** — fundamentals, SEC filings, earnings transcripts, research
-- **Alpha Vantage** — price data, technical indicators
+- **Massive** (formerly Polygon.io) — price data, market/technical data
 
 This is the manual/testing phase: no custom app, scheduler, or automated guardrail code.
 Claude Code itself, following the rules in [`CLAUDE.md`](./CLAUDE.md), is the only safety
@@ -13,7 +13,7 @@ net. A scheduled, guardrailed app may get built later, once the decision quality
 manual sessions holds up.
 
 Right now the goal is narrower than "trade for real": this is about testing the
-Robinhood MCP connection itself, using real data from Octagon and Alpha Vantage, and
+Robinhood MCP connection itself, using real data from Octagon and Massive, and
 seeing how Claude reasons over that data — not yet about relying on it for live trading
 decisions.
 
@@ -29,7 +29,7 @@ decisions.
 ## How a trading session works
 
 Open Claude Code in this project and ask it to research a ticker or review your
-portfolio. It will pull data from Octagon and Alpha Vantage, summarize findings, and
+portfolio. It will pull data from Octagon and Massive, summarize findings, and
 only propose a trade (with a stated confidence level) if the rules in `CLAUDE.md` are
 satisfied. It will never call `execute_trade` without first showing you a `preview_trade`
 result and getting explicit confirmation in the chat.

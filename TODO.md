@@ -11,7 +11,9 @@ actually connect until these are filled in.
       `Authorization: Bearer ${ROBINHOOD_API_KEY}`, which may need adjusting once
       real connection details are in hand.
 - [ ] `OCTAGON_API_KEY` — from octagonai.co, API Keys section.
-- [ ] `ALPHAVANTAGE_API_KEY` — from alphavantage.co/support/#api-key.
+- [ ] `MASSIVE_API_KEY` — from massive.com. Also requires the `mcp_massive` binary to be
+      installed and on `PATH` (`uv tool install "mcp_massive @ git+https://github.com/massive-com/mcp_massive@v0.10.0"`,
+      needs Python 3.12+ and Astral `uv`).
 
 ## CLAUDE.md
 
@@ -24,6 +26,6 @@ actually connect until these are filled in.
 - [ ] Confirm all three servers show as connected (`/mcp`).
 - [ ] List tools from each server; note Robinhood's exact `preview_trade` /
       `execute_trade` tool names and required parameters.
-- [ ] Run the Step 3 dry run on a real ticker: Octagon + Alpha Vantage + Robinhood
+- [ ] Run the Step 3 dry run on a real ticker: Octagon + Massive + Robinhood
       position data, summarize, state confidence — no `preview_trade` or
       `execute_trade` calls in that test.
