@@ -8,10 +8,9 @@
         "OCTAGON_API_KEY": "${OCTAGON_API_KEY}"
       }
     },
-    "alphavantage": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": ["marketdata-mcp-server", "${ALPHAVANTAGE_API_KEY}"]
+    "massive": {
+      "type": "http",
+      "url": "https://mcp.massive.com/"
     },
     "robinhood": {
       "type": "http",

@@ -11,7 +11,10 @@ actually connect until these are filled in.
       `Authorization: Bearer ${ROBINHOOD_API_KEY}`, which may need adjusting once
       real connection details are in hand.
 - [ ] `OCTAGON_API_KEY` — from octagonai.co, API Keys section.
-- [ ] `ALPHAVANTAGE_API_KEY` — from alphavantage.co/support/#api-key.
+
+Massive needs no `.env` entry — it's the remote `https://mcp.massive.com/` server,
+authenticated via OAuth. The first time Claude Code connects, it'll open a browser
+prompt to log in with your Massive account and authorize access; nothing to install.
 
 ## CLAUDE.md
 
@@ -20,10 +23,12 @@ actually connect until these are filled in.
 
 ## Verification (once credentials are real)
 
-- [ ] Restart Claude Code / run `/mcp` so it picks up the new `.mcp.json` env values.
+- [ ] Restart Claude Code / run `/mcp` so it picks up the new `.mcp.json` values.
+- [ ] Complete the OAuth login prompts for Massive (and Robinhood, if it's OAuth-based
+      too) when Claude Code opens them on first connect.
 - [ ] Confirm all three servers show as connected (`/mcp`).
 - [ ] List tools from each server; note Robinhood's exact `preview_trade` /
       `execute_trade` tool names and required parameters.
-- [ ] Run the Step 3 dry run on a real ticker: Octagon + Alpha Vantage + Robinhood
+- [ ] Run the Step 3 dry run on a real ticker: Octagon + Massive + Robinhood
       position data, summarize, state confidence — no `preview_trade` or
       `execute_trade` calls in that test.
