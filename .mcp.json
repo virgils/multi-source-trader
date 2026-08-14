@@ -9,11 +9,8 @@
       }
     },
     "massive": {
-      "type": "stdio",
-      "command": "mcp_massive",
-      "env": {
-        "MASSIVE_API_KEY": "${MASSIVE_API_KEY}"
-      }
+      "type": "http",
+      "url": "https://mcp.massive.com/"
     },
     "robinhood": {
       "type": "http",

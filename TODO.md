@@ -11,9 +11,10 @@ actually connect until these are filled in.
       `Authorization: Bearer ${ROBINHOOD_API_KEY}`, which may need adjusting once
       real connection details are in hand.
 - [ ] `OCTAGON_API_KEY` — from octagonai.co, API Keys section.
-- [ ] `MASSIVE_API_KEY` — from massive.com. Also requires the `mcp_massive` binary to be
-      installed and on `PATH` (`uv tool install "mcp_massive @ git+https://github.com/massive-com/mcp_massive@v0.10.0"`,
-      needs Python 3.12+ and Astral `uv`).
+
+Massive needs no `.env` entry — it's the remote `https://mcp.massive.com/` server,
+authenticated via OAuth. The first time Claude Code connects, it'll open a browser
+prompt to log in with your Massive account and authorize access; nothing to install.
 
 ## CLAUDE.md
 
@@ -22,7 +23,9 @@ actually connect until these are filled in.
 
 ## Verification (once credentials are real)
 
-- [ ] Restart Claude Code / run `/mcp` so it picks up the new `.mcp.json` env values.
+- [ ] Restart Claude Code / run `/mcp` so it picks up the new `.mcp.json` values.
+- [ ] Complete the OAuth login prompts for Massive (and Robinhood, if it's OAuth-based
+      too) when Claude Code opens them on first connect.
 - [ ] Confirm all three servers show as connected (`/mcp`).
 - [ ] List tools from each server; note Robinhood's exact `preview_trade` /
       `execute_trade` tool names and required parameters.

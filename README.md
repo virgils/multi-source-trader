@@ -21,10 +21,13 @@ decisions.
 
 1. Copy `.env.example` to `.env` and fill in real values (see [`TODO.md`](./TODO.md) for
    exactly what's still needed). `.env` is git-ignored — never commit real keys.
-2. `.mcp.json` reads credentials from those env vars via `${VAR}` substitution, so make
-   sure they're exported into the shell environment Claude Code starts from.
-3. Restart Claude Code (or run `/mcp`) so it picks up the servers, and confirm all three
-   show as connected.
+2. `.mcp.json` reads Octagon's credentials from that env var via `${VAR}` substitution,
+   so make sure it's exported into the shell environment Claude Code starts from.
+   Massive is a remote server (`mcp.massive.com`) authenticated via OAuth — no env var,
+   no local install.
+3. Restart Claude Code (or run `/mcp`). For Massive (and Robinhood, if it's OAuth-based
+   too), Claude Code will open a browser prompt on first connect — log in with your
+   account and authorize. Confirm all three servers show as connected in `/mcp`.
 
 ## How a trading session works
 
